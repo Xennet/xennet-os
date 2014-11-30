@@ -1,2 +1,1 @@
-
-{"command":"start","arg":"Id_123"}
+{"command":"node.start","arg":"Id_123"}

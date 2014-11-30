@@ -18,18 +18,17 @@ public:
     }
     void InitAPIs()
     {
-        // todo: this function should be takend from the NodeModuleApi
-        // module name will always be the prefix of all it's function
-        JsonHandler startHandler = [](QJsonValue &argument) -> std::string
-        {
-            if(argument.isString())
-            {
-               return "node #" + argument.toString().toStdString() +" started";
-            }
-            return "ERROR! invalid argument:  " + argument.toString().toStdString();
+        // todo: replace these handlers with real API calls taken
+        // from various modules, e.g NodesModule, WalletModule ect.
 
-        };
-        AddHandler("start", startHandler);
+        AddHandler("node.start", [](QJsonValue &argument) -> std::string
+        {
+           return "{'response': 'node #" + argument.toString().toStdString() +" started";
+        });
+        AddHandler("node.stop", [](QJsonValue &argument) -> std::string
+        {
+           return "{'response':node #" + argument.toString().toStdString() +" stopped";
+        });
     }
 
 };

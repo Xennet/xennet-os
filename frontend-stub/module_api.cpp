@@ -1,7 +1,7 @@
 #include "module_api.h"
 #include "json_request.h"
 
-void ModuleAPI::AddHandler(const char *path, JsonHandler &handler)
+void ModuleAPI::AddHandler(const char *path, JsonHandler handler)
 {
     if(path)
     {

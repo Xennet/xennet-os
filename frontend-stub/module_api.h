@@ -11,7 +11,7 @@ protected:
     Handlers m_handlers;
 public:
     ModuleAPI(const char *moduleName):m_moduleName(moduleName){;}
-    void AddHandler(const char *path, JsonHandler &handler);
+    void AddHandler(const char *path, JsonHandler handler);
     bool Send(QString &strRequest, QString &response);
 };
 
