@@ -14,7 +14,7 @@ bool JsonRequest::Parse(QString &strRequest)
             QString str = path.toString();
             if(!str.isEmpty())
             {
-                m_path = str.toStdString();
+                m_path = str;
                 m_args = jsonRequest.value("arg");
                 return true;
             }

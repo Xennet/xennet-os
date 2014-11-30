@@ -3,6 +3,7 @@
 
 #include "json_request.h"
 #include "module_api.h"
+#include "json_response.h"
 
 class FrontEndStub: public ModuleAPI
 {
@@ -20,14 +21,17 @@ public:
     {
         // todo: replace these handlers with real API calls taken
         // from various modules, e.g NodesModule, WalletModule ect.
+        // every command will have the module name as prefix.
+        // e.g "node.start" "wallet.setConfig"
 
-        AddHandler("node.start", [](QJsonValue &argument) -> std::string
+        AddHandler("start", [](QJsonValue &argument) -> QString
         {
-           return "{'response': 'node #" + argument.toString().toStdString() +" started";
+           //return CreateStatusRespons{std::string("node #" + argument.toString().toStdString() +" started").c_str()};
+            return JsonResponse::CreateStatusRespons("started");
         });
-        AddHandler("node.stop", [](QJsonValue &argument) -> std::string
+        AddHandler("stop", [](QJsonValue &argument) -> QString
         {
-           return "{'response':node #" + argument.toString().toStdString() +" stopped";
+           return JsonResponse::CreateStatusRespons("stopped");
         });
     }
 

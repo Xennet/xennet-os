@@ -50,7 +50,7 @@ void MocupServer::processTextMessage(QString message)
         FrontEndStub::Instance().Send(message, response);
         pClient->sendTextMessage(response);
     }
-    m_pWebSocketServer->close();
+    //m_pWebSocketServer->close();
 }
 void MocupServer::processBinaryMessage(QByteArray message)
 {

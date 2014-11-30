@@ -7,7 +7,7 @@
 class ModuleAPI
 {
 protected:
-    std::string m_moduleName;
+    QString m_moduleName;
     Handlers m_handlers;
 public:
     ModuleAPI(const char *moduleName):m_moduleName(moduleName){;}

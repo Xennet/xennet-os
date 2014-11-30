@@ -12,9 +12,8 @@
             <textarea id="debugTextArea" style="width:400px;height:200px;"></textarea>
         </p>
         <p>
-            <textarea type="text" style="width:500" id="inputText" onkeydown="if(event.keyCode==13)sendMessage();">
-			{"command":"start","arg":"Id_123"}
-			</textarea>
+            <textarea type="text" style="width:500" id="inputText" onkeydown="if(event.keyCode==13)sendMessage();"
+			>{"command":"start","arg":"Id_123"}</textarea>
             <button onClick="sendMessage();">Send</button>
         </p>
 
@@ -29,7 +28,7 @@
                 var msg = document.getElementById("inputText").value;
                 if ( websocket != null )
                 {
-                    document.getElementById("inputText").value = "";
+                    //document.getElementById("inputText").value = "";
                     websocket.send( msg );
                     console.log( "string sent :", '"'+msg+'"' );
                 }

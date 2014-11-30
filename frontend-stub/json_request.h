@@ -9,7 +9,7 @@ public:
     JsonRequest(){;}
 
     bool Parse(QString &strRequest);
-    std::string m_path;
+    QString m_path;
     QJsonValue m_args;
 };
 

@@ -12,7 +12,8 @@ SOURCES += \
     mockup_server.cpp \
     json_request.cpp \
     module_api.cpp \
-    front_end_stub.cpp
+    front_end_stub.cpp \
+    json_response.cpp
 
 HEADERS += \
     mockup_server.h \
@@ -20,6 +21,7 @@ HEADERS += \
     front_end_stub.h \
     module_api.h \
     json_request_handler.h \
-    includes.h
+    includes.h \
+    json_response.h
 
 OTHER_FILES += test_client.html
