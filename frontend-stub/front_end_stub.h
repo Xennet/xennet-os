@@ -24,16 +24,32 @@ public:
         // every command will have the module name as prefix.
         // e.g "node.start" "wallet.setConfig"
 
-        AddHandler("start", [](QJsonValue &argument) -> QString
+        AddHandler("node.start", [](QJsonValue &argument) -> QString
         {
            //return CreateStatusRespons{std::string("node #" + argument.toString().toStdString() +" started").c_str()};
             return JsonResponse::CreateStatusRespons("started");
         });
-        AddHandler("stop", [](QJsonValue &argument) -> QString
+        AddHandler("node.stop", [](QJsonValue &argument) -> QString
         {
-           return JsonResponse::CreateStatusRespons("stopped");
+            return JsonResponse::CreateStatusRespons("stopped");
+        });
+        AddHandler("node.setConfig", [](QJsonValue &argument) -> QString
+        {
+            if(argument.isObject())
+            {
+                QJsonObject argObject = argument.toObject();
+                //QJsonArray nodeId = argObject.value("node_id");
+                //QJsonObject config = argObject.value("config");
+
+                // TODO set config
+
+                return JsonResponse::CreateStatusRespons("success");
+            }
+            // TODO: schema validation
+            return JsonResponse::CreateStatusRespons("ERROR: invalid request");
         });
     }
+
 
 };
 

@@ -1,6 +1,9 @@
 #ifndef JSON_RESPONSE_H
 #define JSON_RESPONSE_H
 
+#include <QJsonObject>
+#include <QJsonDocument>
+
 class JsonResponse
 {
 public:
