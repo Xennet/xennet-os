@@ -4,6 +4,7 @@ QT       -= gui
 TARGET = front_end_stub
 CONFIG   += console
 CONFIG   -= app_bundle
+CONFIG += c++11
 
 TEMPLATE = app
 
